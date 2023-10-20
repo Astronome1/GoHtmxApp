@@ -38,7 +38,7 @@ func SearchTicker(ticker string) []Stock {
 }
 
 func GetDailyValues(ticker string) Values {
-	ApiKey := "apiKey=xP0hsWdLO8GhzlO7t30yYvYhyM5YTs8G"
+	ApiKey := "a key"
 	PolygonPath := "https://api.polygon.io"
 	resp, err := http.Get(PolygonPath + "/v3/open-close/" + ApiKey + strings.ToUpper(ticker))
 
