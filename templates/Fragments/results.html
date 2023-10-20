@@ -1,0 +1,19 @@
+<ul>
+    <!--iterate over results-->
+    {{range .Results}}
+    <li>
+        <!--Display company name-->
+        <h3>{{.Name}}</h3>
+        <!--Render add button which triggers post event to stock endpoint, appends resulting content at the end of stock list element-->
+        <button
+        name="ticker"
+        value="{{.Ticker}}"
+        hx-post="/stock/"
+        hx-indicator="#spinner"
+        hx-target="#stock-list"
+        hx-swap="beforeend">
+        <span id="spinner">...</span>Add
+        </button>
+    </li>
+    {{end}}
+</ul>

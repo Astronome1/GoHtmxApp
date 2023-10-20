@@ -1,0 +1,23 @@
+<html lang="en">
+    <head>
+        <script src="https://unpkg.com/htmx.org@1.9.6"></script>
+        <link rel="stylesheet" href="/static/index.css" />
+    </head>
+    <body>
+        <main>
+            <header>
+                <ul id="stock-list"></ul>
+            </header>
+            <section>
+                <!--what htmx code does here is making it so that when the keyup and changed events are triggered
+                an async request will be sent to the server when response is recieved the html will be placed inside
+                the search-result container -->
+                <input type="search" name="key" placeholder="Search....."
+                hx-get="/search"
+                hx-trigger="keyup changed delay:500ms"
+                hx-target="#search-results"/>
+                <div id="search-results"></div>
+            </section>
+        </main>
+    </body>
+</html>
